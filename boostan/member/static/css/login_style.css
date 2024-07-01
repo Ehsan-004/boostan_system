@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: cornsilk;
+}
+
+.container{
+    margin: 40px auto 0 auto;
+    background-color: aquamarine;
+    max-width: 500px;
+    
+    border: 1px solid aquamarine;
+    /*margin-top: 40px;*/
+    text-align: center;
+    border-radius: 30px;
+    padding-bottom: 30px;
+}
+
+.container_title{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.login_form{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 90%;    
+    /* border: 1px solid black; */
+}
+
+.label{
+    display: block;
+    text-align: right;
+    margin-right: 30px;
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input{
+    width: 70%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 8px;
+    font-size: 20px;
+    border-color: aquamarine;
+    direction: ltr;
+}
+
+input[type=submit]{
+    margin-top: 52px;
+    box-shadow: 0 4px 8px rgb(0,0,0,08);
+}
+
+input[type=submit]:hover{
+    box-shadow: 0 0 ;
+    transition: all 250ms;
+}
+
+.helper{
+    margin-top: 20px;
+}
+
+.links{
+    text-decoration: none;
+    /* margin-top: 100px; */
+    /*color: rgb(15, 62, 204);*/
+    color: blue;
+    text-shadow: 0 4px 8px rgb(0,0,0,08);
+}
+
+.links:hover{
+    text-shadow: 0 0;
+    transition: all 250ms;
+    margin-bottom: 20px;
+}
+
+.error{
+    color: red  ;
+}

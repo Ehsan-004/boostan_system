@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+</head>
+<body>
+<div class="title">
+    دانشگاه ... - سامانه جهنم
+</div>
+
+<div class="main_container">
+    <aside>
+        <div class="side_menu">
+            <ul>
+                {% if role == "دانشجو" %}
+                    <li><a href="">آموزش</a></li>
+                    <li><a href="">پژوهش</a></li>
+                    <li><a href="">دانشجویی</a></li>
+                    <li><a href="">مالی و اداری</a></li>
+                    <li><a href="">پیشخوان خدمت</a></li>
+                    <li><a href="">ثبت نام</a></li>
+                    <li><a href="">ارزشیابی</a></li>
+                    <li><a href="">سیستم</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </aside>
+
+    <div class="side_left">
+
+        <header class="header">
+            <div class="header__menu">
+                <ul>
+                    <li>
+                        {% if user and user.is_authenticated %}
+                            <span>{{ user.first_name }} {{ user.last_name }} - {{ role }}</span>
+                        {% else %}
+                            <span>خطا در نام کاربری</span>
+                        {% endif %}
+                    </li>
+                    <li><a href="{% url 'members:logout' %}">خروج</a></li>
+                </ul>
+            </div>
+
+            <!-- <h4>نام کاربری</h4>
+            <h4><a href="login.html">خروج</a></h4> -->
+            <img class="profile_picture" src="{{ member.profile_picture.url }}" alt="عکس پروفایل">
+        </header>
+
+        <div class="sub_menu">
+            <ul>
+                <li>منوی زیری</li>
+            </ul>
+        </div>
+
+        <div class="display_content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>
