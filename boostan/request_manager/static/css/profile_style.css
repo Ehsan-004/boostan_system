@@ -1,0 +1,37 @@
+/* this is the style for the profile page */
+
+.profile_main_container{
+    /* width: none; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile_details{
+    width: 30%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+
+}
+
+.content_display{
+    width: 70%;
+    border: 1px solid black;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.profile_details ul{
+    padding: 20px 0 0 0;
+    list-style: none;
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
+    text-align: center;
+}
+
+#profile_details_picture{
+    width: 50%;
+    border-radius: 200px ;
+}

@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>سامانه بوستان</title>
     <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile_style.css' %}">
+    <script src="{% static 'js/jQuery.js' %}"></script>
+
 </head>
 <body>
 <div class="title">
@@ -15,17 +18,8 @@
 <div class="main_container">
     <aside>
         <div class="side_menu">
-            <ul>
-                {% if role == "دانشجو" %}
-                    <li><a href="">آموزش</a></li>
-                    <li><a href="">پژوهش</a></li>
-                    <li><a href="">دانشجویی</a></li>
-                    <li><a href="">مالی و اداری</a></li>
-                    <li><a href="">پیشخوان خدمت</a></li>
-                    <li><a href="">ثبت نام</a></li>
-                    <li><a href="">ارزشیابی</a></li>
-                    <li><a href="">سیستم</a></li>
-                {% endif %}
+            <ul id="sideul">
+
             </ul>
         </div>
     </aside>
@@ -57,14 +51,12 @@
             </ul>
         </div>
 
-        <div class="display_content">
-            {% block content %}
-            {% endblock %}
+        <div id="display_content">
+
         </div>
-
     </div>
-
-
 </div>
+<script src="{% static 'js/menu_items.js' %}"></script>
+<script src="{% static 'js/menu_functions.js' %}"></script>
 </body>
 </html>

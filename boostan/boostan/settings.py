@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p9t6m8s(1y%rww4s=l+pe51ccl1cnio+9d&_%z99(q%r!s#2*%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'member',
+    'request_manager',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     'static',
-    'member/static'
+    'member/static',
+    'request_manager/static',
 ]
 
 MEDIA_ROOT = 'files'

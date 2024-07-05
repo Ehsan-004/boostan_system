@@ -5,6 +5,7 @@
 
 body{
     background-color:cornsilk;
+    /* background-image: linear-gradient(green, blue red); */
 }
 
 .title{
@@ -15,8 +16,10 @@ a{
     text-decoration: none;
 }
 a:hover{
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
     transition: all 2s;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .main_container{
@@ -31,7 +34,7 @@ a:hover{
     overflow: hidden;
 }
 
-/* right side including menu */ 
+/* right side including menu */
 
 aside{
     width: 15%;
@@ -42,7 +45,7 @@ aside{
     padding-top: 30px;
     width: 100%;
     /* border: 1px solid black; */
-    
+
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 
@@ -53,11 +56,19 @@ aside{
 
 .side_menu ul{
     list-style: none;
-    padding-right: 0;    
+    padding-right: 0;
 }
 
 .side_menu ul li{
     margin-top: 20px;
+}
+
+#side_menu ul li a{
+    text-decoration: none;
+}
+
+#side_menu ul li a:hover{
+    text-decoration: none;
 }
 
 /* end of right side */
@@ -68,7 +79,7 @@ aside{
     height:100% ;
     border: 1px solid black;
 }
- 
+
     /* header */
 
 .header{
@@ -81,8 +92,8 @@ aside{
 }
 
 .header__menu{
-    
-    width: 40%;
+
+    width: 25%;
     display: flex;
 }
 
@@ -115,6 +126,25 @@ aside{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
+    align-items: center;
+}
+
+.sub_menu ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    /* list-style-image: url('../images/close.png'); */
+}
+
+.sub_menu ul li{
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+#chosen{
+    background-color: cornsilk;
 }
 
     /* end of header */
@@ -122,16 +152,42 @@ aside{
 /* end of left side */
 /*  */
 
-.display_content{
+#display_content{
     height: 90%;
     overflow: auto;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
     position: relative;
 }
 
-/*.display_content{*/
-/*    height: 90%;*/
-/*    overflow: auto;*/
-/*    padding: 20px;*/
-/*}*/
+.content{
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+}
 
+.close-button{
+    float: right;
+    cursor: pointer;
+    width: 16px; /* Adjust the width as needed */
+    height: 16px; /* Adjust the height as needed */
+    background-image: url('../images/close.png'); /* Replace with the path to your close button image */
+    background-size: cover;
+}
+
+.sub_menu ul li span{
+    cursor: pointer;
+}
+
+.active{
+    text-decoration: none;
+    cursor: pointer;
+    background-color: cornsilk;
+    border: 6px solid cornsilk;
+    transition: all 250ms ease-in-out;
+}
+
+.active:hover{
+    text-decoration: none;
+    border-radius: 20px;
+}
