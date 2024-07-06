@@ -14,7 +14,7 @@ class Member(models.Model):
     user_profile = models.OneToOneField(User, on_delete=models.CASCADE)
     national_code = models.CharField(max_length=10, unique=True)
     profile_picture = models.ImageField(upload_to='member_pictures', default='member_pictures/default.jpeg')
-    position = models.CharField(max_length=10, choices=positions, default='P')
+    position = models.CharField(max_length=10, choices=positions, default='personnel')
 
     class Meta:
         db_table = 'members'

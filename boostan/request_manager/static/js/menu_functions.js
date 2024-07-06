@@ -22,3 +22,16 @@ function profile(){
     // Add the 'active' class to the clicked link
     clickedLink.classList.add('active');
 }
+
+function admin_all_members(){
+    $.ajax({
+        url: "http://localhost:8000/requests/admin_all/",
+        method: "GET",
+        success: function (data){
+            document.getElementById("display_content").innerHTML = data.structure;
+        },
+        error: function (){
+            alert("مشکلی پیش آمده است")
+        }
+    })
+}
