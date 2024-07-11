@@ -11,8 +11,8 @@ $(document).ready(function () {
             window.alert("سلام " + data.name);
         },
         error: function () {
+            window.location.href = "http://localhost:8000/user/logout/";
             window.alert(" مشکلی پیش آمد، دوباره وارد شوید.");
-            window.location.reload();
         }
     })
 })

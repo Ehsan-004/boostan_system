@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Member, Teacher, Student, Course
+from .models import Member, Teacher, Student, Course, Score
 
 
 class CourseAdmin(admin.ModelAdmin):
@@ -14,7 +14,11 @@ class TeacherAdmin(admin.ModelAdmin):
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('member_profile', 'department')
 
+class ScoreAdmin(admin.ModelAdmin):
+    list_display = ('score', )
+
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Member, MemberAdmin)
 admin.site.register(Teacher, TeacherAdmin)
 admin.site.register(Student, StudentAdmin)
+admin.site.register(Score, ScoreAdmin)

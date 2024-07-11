@@ -1,5 +1,12 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.contrib.auth.models import User
+
+
+def score_validator(score):
+    if int(score) < 0 or int(score) > 20:
+        raise ValidationError('نمره باید بین 0 تا 20 باشد.')
+    return score
 
 
 class Member(models.Model):
@@ -36,7 +43,7 @@ class Student(models.Model):
         verbose_name_plural = 'Students'
 
     def __str__(self):
-        return  str(self.member_profile.national_code)
+        return  str(self.member_profile.user_profile)
 
 
 class Teacher(models.Model):
@@ -51,7 +58,7 @@ class Teacher(models.Model):
         verbose_name_plural = 'Teachers'
 
     def __str__(self):
-        return str(self.member_profile.national_code)
+        return str(self.member_profile.user_profile.first_name) + " " + str(self.member_profile.user_profile.last_name)
 
 
 class Personnel(models.Model):
@@ -70,6 +77,8 @@ class Personnel(models.Model):
 class Course(models.Model):
     name = models.CharField(max_length=50)
     department = models.CharField(max_length=50)
+    students = models.ManyToManyField(Student, related_name='courses')
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         db_table = 'courses'
@@ -77,4 +86,15 @@ class Course(models.Model):
         verbose_name_plural = 'Courses'
 
     def __str__(self):
-        return "course-" + self.name
+        return self.name
+
+
+class Score(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, blank=True, null=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, blank=True, null=True)
+    score = models.IntegerField(default=0, validators=[score_validator,])
+
+    class Meta:
+        db_table = 'scores'
+        verbose_name = 'Score'
+        verbose_name_plural = 'Scores'

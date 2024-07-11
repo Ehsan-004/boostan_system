@@ -35,3 +35,29 @@ function admin_all_members(){
         }
     })
 }
+
+function courses(){
+    $.ajax({
+        url: "http://localhost:8000/requests/courses",
+        method: "GET",
+        success: function (data){
+            document.getElementById("display_content").innerHTML = data.structure;
+        },
+        error: function (){
+            alert("مشکلی پیش آمده است")
+        }
+    })
+}
+
+function studentScores(){
+    $.ajax({
+        url: "http://localhost:8000/requests/scores/",
+        method: "GET",
+        success: function (data){
+            document.getElementById("display_content").innerHTML = data["structure"];
+        },
+        error: function (){
+            alert("مشکلی پیش آمده است")
+        }
+    })
+}

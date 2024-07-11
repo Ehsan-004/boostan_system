@@ -26,3 +26,4 @@ urlpatterns = [
     path('user/', include('member.urls', namespace='members')),
     path('requests/', include('request_manager.urls', namespace='request_manager')),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
+

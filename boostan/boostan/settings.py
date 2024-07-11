@@ -104,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -126,6 +125,7 @@ STATICFILES_DIRS = [
     'member/static',
     'request_manager/static',
 ]
+# STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_ROOT = 'files'
 MEDIA_URL = 'files/'
